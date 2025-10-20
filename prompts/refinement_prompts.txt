@@ -1,0 +1,2 @@
+Polish the UI and UX: improve focus outlines, add ARIA labels, ensure contrast ratio >= 4.5:1,
+debounce clicks, add seeded RNG for reproducible demos, and implement a 'Quick Demo' mode for judges.

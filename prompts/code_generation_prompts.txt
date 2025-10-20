@@ -1,0 +1,4 @@
+Write accessible, portable code for a single-page game in HTML/CSS/JS only. No builds.
+Features: Menu (region, difficulty), Play (board of 30 tiles, dice roll, event card modal with 3 options),
+HUD gauges (Budget, Resilience, Awareness, Equity), Results screen with outcome grade and tips. Include keyboard
+controls and reduced-motion preference. No external dependencies.

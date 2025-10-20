@@ -1,0 +1,2 @@
+Generate simple, license-free 2D assets via CSS/Unicode/Emoji only. Provide a color palette
+(high-contrast safe) and a set of emoji for hazards, community actions, and UI elements. Avoid external images.

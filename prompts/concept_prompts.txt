@@ -1,0 +1,4 @@
+You are a game ideation assistant. Propose 3 tabletop-like browser games that teach
+community resilience to climate hazards (Vietnam & Australia). Each concept must map choices to
+four gauges: Budget, Resilience, Awareness, Equity. Include 5–8 sample event cards per region and
+explain why each option affects the gauges.

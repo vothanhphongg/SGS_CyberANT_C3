@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resilience Roll — Play for Impact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Resilience Roll <span aria-hidden="true">🎲</span></h1>
+    <button id="contrastBtn" class="ghost" aria-pressed="false" aria-label="Toggle high contrast">High Contrast</button>
+  </header>
+
+  <!-- MENU SCREEN -->
+  <main id="screen-menu" class="screen active" role="main" aria-labelledby="menuTitle">
+    <h2 id="menuTitle">Menu</h2>
+    <p class="tagline">Roll the dice to guide your community through a season of hazards. Make smart, inclusive choices.</p>
+
+    <form id="menuForm" class="card form">
+      <label class="row">Region
+        <select id="region">
+          <option value="VN">Việt Nam</option>
+          <option value="AU">Australia</option>
+        </select>
+      </label>
+
+      <label class="row">Difficulty
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+
+      <label class="row">Quick Demo
+        <input id="quickDemo" type="checkbox" />
+        <span class="sub">(shorter run for judges)</span>
+      </label>
+
+      <div class="actions">
+        <button id="startBtn" class="primary">Start Game</button>
+        <button id="howBtn" type="button" class="ghost">How to Play</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- HOW-TO -->
+  <section id="screen-howto" class="screen" aria-labelledby="howtoTitle">
+    <h2 id="howtoTitle">How to Play</h2>
+    <ol class="card">
+      <li>Pick your <strong>region</strong> (VN/AU) and <strong>difficulty</strong>.</li>
+      <li>Press <em>Roll</em> to move. Land on a tile → draw an <strong>Event Card</strong>.</li>
+      <li>Choose one of 3 responses. Your gauges change accordingly.</li>
+      <li>Finish the track with healthy gauges to win.</li>
+    </ol>
+    <button id="backToMenu" class="ghost">Back</button>
+  </section>
+
+  <!-- PLAY SCREEN -->
+  <section id="screen-play" class="screen" aria-labelledby="playTitle">
+    <h2 id="playTitle">Play</h2>
+
+    <div class="hud">
+      <div class="gauge"><span>Budget</span><div class="bar"><div id="gBudget"></div></div><output id="oBudget">50</output></div>
+      <div class="gauge"><span>Resilience</span><div class="bar"><div id="gResilience"></div></div><output id="oResilience">50</output></div>
+      <div class="gauge"><span>Awareness</span><div class="bar"><div id="gAwareness"></div></div><output id="oAwareness">50</output></div>
+      <div class="gauge"><span>Equity</span><div class="bar"><div id="gEquity"></div></div><output id="oEquity">50</output></div>
+    </div>
+
+    <div class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="Season Track"></div>
+      <div class="controls">
+        <button id="rollBtn" class="primary" aria-live="polite">Roll 🎲</button>
+        <span id="rollResult" class="roll-result" aria-live="polite"></span>
+        <span id="turnInfo" class="turn-info"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT MODAL -->
+  <dialog id="eventModal" class="modal" aria-labelledby="eventTitle">
+    <form method="dialog">
+      <h3 id="eventTitle">Event</h3>
+      <p id="eventText"></p>
+      <div id="optionBtns" class="options"></div>
+      <details id="factBox"><summary>Why this matters</summary><p id="factText"></p></details>
+      <div class="actions">
+        <button id="continueBtn" value="close" class="primary">Continue</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- RESULTS SCREEN -->
+  <section id="screen-results" class="screen" aria-labelledby="resultsTitle">
+    <h2 id="resultsTitle">Results</h2>
+    <div id="resultsCard" class="card"></div>
+    <div class="actions">
+      <button id="playAgainBtn" class="primary">Play Again</button>
+      <button id="toMenuBtn" class="ghost">Menu</button>
+    </div>
+  </section>
+
+  <footer class="app-footer">
+    <small>© 2025 Cyber ANT — RMIT Hackathon | Built with HTML/CSS/JS</small>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
